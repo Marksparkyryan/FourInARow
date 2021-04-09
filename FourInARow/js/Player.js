@@ -1,4 +1,5 @@
-import Token from Token
+import Token from "./Token"
+
 
 class Player {
  constructor(name, id, colour, active=false) {
