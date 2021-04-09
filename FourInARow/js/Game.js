@@ -1,5 +1,3 @@
-import Board from "./Board";
-import Player from "./Player";
 
 
 class Game {
@@ -19,7 +17,8 @@ class Game {
         for (let i = 1; i <= num; i++) {
             let randomColour = Math.floor(Math.random()*16777215).toString(16);
             let hex = `#${randomColour}`;
-            let player = new Player(name=`Player ${i}`, colour=hex, id=i);
+            let player = new Player(`Player ${i}`, i, hex);
+            players.push(player)
         }
         return players;
     }
@@ -28,6 +27,16 @@ class Game {
      * Starts the game!
      */
     startGame() {
+        this.board.drawHTMLBoard();
+        this.players[0].active = true;
+        this.activePlayer.activeToken.drawHTMLToken();
+        this.ready = true;
+    }
 
+    /**
+     * Getter for actie player
+     */
+    get activePlayer() {
+        return this.players.find(player => player.active);
     }
 }

@@ -1,4 +1,3 @@
-import Space from "./Space";
 
 
 class Board {
@@ -30,8 +29,10 @@ class Board {
      * Converts the 2D array of spaces into SVG spaces
      */
     drawHTMLBoard() {
-        for (let space of this.spaces) {
-            space.drawSVGSpace();
+        for (let column of this.spaces) {
+            for (let space of column) {
+                space.drawSVGSpace();
+            }
         }
     }
 }
