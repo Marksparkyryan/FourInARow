@@ -23,4 +23,11 @@ class Game {
         }
         return players;
     }
+
+    /**
+     * Starts the game!
+     */
+    startGame() {
+
+    }
 }
