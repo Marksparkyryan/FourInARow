@@ -5,20 +5,23 @@ class Board {
     constructor(rows=6, columns=7) {
         this.rows = rows;
         this.columns = columns;
-        this.spaces = this.createSpaces(this.rows, this.columns);
+        this.spaces = this.createSpaces();
     }
 
     /**
-     * 
+     * Generates 2D array of spaces
      * @param {number} num - Number of spaces on board 
      * @returns 
      */
-    createSpaces(x, y) {
+    createSpaces() {
         let spaces = [];
-        let totalSpaces = x * y;
-        for (let i = 0; i < totalSpaces; i++) {
-            let space = new Space(x, y);
-            this.spaces.push(space);
+        for (let x = 0; x < this.columns; x++) {
+            let column = [];
+            for (let y = 0; y < this.columns; y++) {
+                let space = new Space(x, y)
+                column.push(space);
+            }
+            spaces.push(column);
         }
         return spaces;
     }
