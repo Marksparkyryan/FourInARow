@@ -1,9 +1,4 @@
 
-// ID
-// Name
-// Colour
-// Total tokens
-// 
 
 class Player {
  constructor(name, id, colour, active=false) {
