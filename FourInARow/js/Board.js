@@ -25,4 +25,13 @@ class Board {
         }
         return spaces;
     }
+
+    /**
+     * Converts the 2D array of spaces into SVG spaces
+     */
+    drawHTMLBoard() {
+        for (let space of this.spaces) {
+            space.drawSVGSpace();
+        }
+    }
 }
